@@ -1,0 +1,29 @@
+{
+  "name": "componentdesigner",
+  "version": "0.1.0",
+  "main": "main.js",
+  "osx": {
+    "title": "Component Designer",
+    "background": "/Users/Archie/Documents/minimal.png",
+    "icon": "/Users/Archie/Downloads/icon.icns",
+    "icon-size": 128,
+    "contents": [
+      { "x": 355, "y": 125, "type": "link", "path": "/Applications" },
+      { "x": 155, "y": 125, "type": "file" }
+    ]
+  },
+  "devDependencies": {
+    "electron": "^1.6.1"
+  },
+  "scripts": {
+    "dev": "electron . --enable-logging",
+
+    "clean": "rm -rf ./dist",
+    "clean:osx": "rm -rf ./dist/osx",
+
+    "pack": "npm run clean && npm run pack:osx",
+    "pack:osx": "npm run clean:osx && electron-packager . \"Component Designer\" --out=/Users/Archie/Documents --platform=darwin --arch=x64 --version=0.0.1 --icon=/Users/Archie/Downloads/icon.icns --ignore=dist --ignore=assets --ignore=builder.json --ignore=bower.json --ignore=README.md --ignore=.gitignore --ignore=preview.png --overwrite",
+    "build": "npm run build:osx",
+    "build:osx": "npm run pack:osx && electron-builder \"/Users/Archie/Documents/ComponentDesigner/Component Designer.app\" --platform=osx --out=\"/Users/Archie/Documents\" --config=builder.json --overwrite"
+  }
+}

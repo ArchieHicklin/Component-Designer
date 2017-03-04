@@ -1,0 +1,27 @@
+<html>
+    <head>
+      <title>Component Designer</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <script type="text/javascript" src="jquery-3.1.1.min.js" onload="window.$ = window.jQuery = module.exports;"></script>
+      <link rel="stylesheet" href="style.css" />
+      <link rel="stylesheet" href="codemirror.css">
+      <link href="https://fonts.googleapis.com/css?family=PT+Mono" rel="stylesheet">
+    </head>
+
+    <body>
+      <div class="button-con">
+              <label for="cb1">
+
+              </label>
+              <input class="toggle" id="cb1" type="checkbox">
+              <label class="toggle-button" for="cb1"></label>
+            </div>
+      <textarea id="html" placeholder="HTML"></textarea>
+      <textarea id="css" placeholder="CSS"></textarea>
+      <textarea id="js" placeholder="JS"></textarea>
+      <iframe id="code"></iframe>
+
+      <script type="text/javascript" src="app.js"></script>
+      <script type="text/javascript" src="toggle.js"></script>
+    </body>
+  </html>
